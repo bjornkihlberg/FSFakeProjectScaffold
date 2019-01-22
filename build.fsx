@@ -15,10 +15,17 @@ let clean _ =
     ++ "./**/obj"
     |> Shell.cleanDirs
 
+let build _ =
+    !! "./Lib/Lib.fsproj"
+    ++ "./LibTests/LibTests.fsproj"
+    ++ "./App/App.fsproj"
+    |> Seq.iter (DotNet.exec id "build" >> ignore)
+
 let run _ = DotNet.exec id "run" "--project ./App" |> ignore
 
 Target.create "Clean" clean
 Target.create "CleanRun" run
+Target.create "CleanBuild" build
 Target.create "Run" run
 
 "Clean" ==> "CleanRun"
