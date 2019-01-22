@@ -36,15 +36,11 @@ let coverage _ =
     |> ignore
 
 Target.create "Clean" clean
-Target.create "CleanRun" run
 Target.create "CleanBuild" build
-Target.create "CleanTest" test
 Target.create "Run" run
 Target.create "Test" test
-Target.create "GenCoverage" coverage
+Target.create "Coverage" coverage
 
-"Clean" ==> "CleanRun"
 "Clean" ==> "CleanBuild"
-"Clean" ==> "CleanTest"
 
 Target.runOrDefault "Run"
