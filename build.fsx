@@ -23,10 +23,13 @@ let build _ =
 
 let run _ = DotNet.exec id "run" "--project ./App" |> ignore
 
+let test _ = DotNet.exec id "test" "./LibTests/LibTests.fsproj" |> ignore
+
 Target.create "Clean" clean
 Target.create "CleanRun" run
 Target.create "CleanBuild" build
 Target.create "Run" run
+Target.create "Test" test
 
 "Clean" ==> "CleanRun"
 "Clean" ==> "CleanBuild"
