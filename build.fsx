@@ -15,4 +15,9 @@ let clean _ =
     ++ "./**/obj"
     |> Shell.cleanDirs
 
+let run _ = DotNet.exec id "run" "--project ./App" |> ignore
+
 Target.create "Clean" clean
+Target.create "Run" run
+
+Target.runOrDefault "Run"
