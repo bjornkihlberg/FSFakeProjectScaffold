@@ -25,12 +25,23 @@ let run _ = DotNet.exec id "run" "--project ./App" |> ignore
 
 let test _ = DotNet.exec id "test" "./LibTests/LibTests.fsproj" |> ignore
 
+let coverage _ =
+    [ "/p:CollectCoverage=true"
+      "/p:CoverletOutputFormat=lcov"
+      "/p:CoverletOutput=../lcov.info"
+      "/p:Include=\"[Lib]*\""
+      "./LibTests/LibTests.fsproj" ]
+    |> String.concat " "
+    |> DotNet.exec id "test"
+    |> ignore
+
 Target.create "Clean" clean
 Target.create "CleanRun" run
 Target.create "CleanBuild" build
 Target.create "CleanTest" test
 Target.create "Run" run
 Target.create "Test" test
+Target.create "GenCoverage" coverage
 
 "Clean" ==> "CleanRun"
 "Clean" ==> "CleanBuild"
