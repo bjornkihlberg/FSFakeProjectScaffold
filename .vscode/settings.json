@@ -9,5 +9,6 @@
         "**/build.fsx.lock": true,
         "**/paket.lock": true,
         "**/LICENSE": true
-    }
+    },
+    "dotnet-test-explorer.testProjectPath": "./LibTests"
 }
