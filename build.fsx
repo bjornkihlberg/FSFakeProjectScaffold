@@ -29,5 +29,6 @@ Target.create "CleanBuild" build
 Target.create "Run" run
 
 "Clean" ==> "CleanRun"
+"Clean" ==> "CleanBuild"
 
 Target.runOrDefault "Run"
