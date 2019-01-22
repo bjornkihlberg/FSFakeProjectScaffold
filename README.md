@@ -31,10 +31,14 @@ build tool is used to manage project scenarios like running tests, cleaning arte
     ```
     fake run build.fsx -t Test
     ```
+    ***Test** is not strictly needed since tests can be run from the test explorer in vs code.*
+
 - Run cleaning process with command:
     ```
     fake run build.fsx -t Clean
     ```
+    ***Clean** should not be necessary but could be useful to have.*
+
 - Run cleaning process and a complete project rebuild with command:
     ```
     fake run build.fsx -t CleanBuild
