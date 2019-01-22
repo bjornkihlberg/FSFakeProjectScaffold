@@ -18,6 +18,9 @@ let clean _ =
 let run _ = DotNet.exec id "run" "--project ./App" |> ignore
 
 Target.create "Clean" clean
+Target.create "CleanRun" run
 Target.create "Run" run
+
+"Clean" ==> "CleanRun"
 
 Target.runOrDefault "Run"
