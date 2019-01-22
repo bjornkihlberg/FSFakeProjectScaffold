@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true,
+        "**/.paket": true,
+        "**/.fake": true,
+        "**/packages": true,
+        "**/paket-files": true,
+        "**/build.fsx.lock": true,
+        "**/paket.lock": true,
+        "**/LICENSE": true
+    }
+}
