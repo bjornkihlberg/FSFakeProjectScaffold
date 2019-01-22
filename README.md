@@ -47,3 +47,11 @@ build tool is used to manage project scenarios like running tests, cleaning arte
     ```
     fake run build.fsx -t Coverage
     ```
+
+---
+## Run unit tests with .NET Core Test Explorer
+![testexplorer](https://user-images.githubusercontent.com/38290734/51555245-81416980-1e77-11e9-88b5-e2fdc609fc54.gif)
+
+---
+## Generate unit test code coverage
+![codecoverage](https://user-images.githubusercontent.com/38290734/51555726-91a61400-1e78-11e9-8ad4-48dd8116e084.gif)
