@@ -28,10 +28,12 @@ let test _ = DotNet.exec id "test" "./LibTests/LibTests.fsproj" |> ignore
 Target.create "Clean" clean
 Target.create "CleanRun" run
 Target.create "CleanBuild" build
+Target.create "CleanTest" test
 Target.create "Run" run
 Target.create "Test" test
 
 "Clean" ==> "CleanRun"
 "Clean" ==> "CleanBuild"
+"Clean" ==> "CleanTest"
 
 Target.runOrDefault "Run"
