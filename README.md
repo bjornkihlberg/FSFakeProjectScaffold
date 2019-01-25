@@ -55,3 +55,8 @@ build tool is used to manage project scenarios like running tests, cleaning arte
 ---
 ## Generate unit test code coverage
 ![codecoverage](https://user-images.githubusercontent.com/38290734/51555726-91a61400-1e78-11e9-8ad4-48dd8116e084.gif)
+
+---
+## Property based testing
+![propertytesting](https://user-images.githubusercontent.com/38290734/51748035-753ded80-20ab-11e9-995b-cb609f5b8b85.gif)
+*The test fails because `x * x` isn't greater than `x` when `x = 0` or when `x = 1`*
