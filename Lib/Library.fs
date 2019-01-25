@@ -6,4 +6,4 @@ module Library =
         then x * 2
         else 42
 
-    let g = (+) 1
+    let g x = x * x
